@@ -1,4 +1,4 @@
-# curso
+# Curso
 
 a [Sails v1](https://sailsjs.com) application
 
@@ -15,6 +15,11 @@ a [Sails v1](https://sailsjs.com) application
 ### Version info
 
 This app was originally generated on Mon Feb 21 2022 18:37:49 GMT-0300 (Argentina Standard Time) using Sails v1.5.2.
+
+
+### Spanish info
+
+Esta aplicación es una prueba utilizando al framework Sails, MongoDB como gestor de bases de datos y Bulma como framework css.
 
 <!-- Internally, Sails used [`sails-generate@2.0.6`](https://github.com/balderdashy/sails-generate/tree/v2.0.6/lib/core-generators/new). -->
 
