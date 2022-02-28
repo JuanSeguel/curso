@@ -19,16 +19,18 @@ module.exports.routes = {
    ***************************************************************************/
 
   'GET /': { view: 'pages/homepage' },
-  'GET /list': 'DefaultController.list',
-  'POST /create': 'DefaultController.store',
-  'GET /show/:id': 'DefaultController.show',
+
+  // * Las rutas van en plural por estandarizacion
 
   // * Rooms
-  'get /room/': 'RoomController.list',
-  'get /room/:id': 'RoomController.show',
-  'post /room': 'RoomController.store',
-  'put /room/:id': 'RoomController.update',
-  'delete /room/:id': 'RoomController.destroy',
+  'get /rooms/': 'RoomController.list',
+  'get /rooms/:id': 'RoomController.show',
+  'post /rooms': 'RoomController.store',
+  'put /rooms/:id': 'RoomController.update',
+  'delete /rooms/:id': 'RoomController.destroy',
+
+  // * Information
+  'post /rooms/:id/informations': 'InformationController.store',
 
   // * Ejemplos de ruteo
   /*

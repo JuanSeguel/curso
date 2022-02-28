@@ -1,16 +1,16 @@
 {
-  "name": "curso",
+  "name": "Curso Sails (Chat)",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "Curso realizado usando Sails.js",
   "keywords": [],
   "dependencies": {
     "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
     "@sailshq/upgrade": "^1.0.9",
-    "grunt": "1.0.4",
-    "lodash": "3.10.1",
+    "grunt": "^1.0.4",
+    "lodash": "^3.10.1",
     "sails": "^1.5.2",
     "sails-hook-grunt": "^5.0.0",
     "sails-hook-orm": "^2.1.1",
@@ -18,7 +18,7 @@
     "sails-mongo": "^1.2.0"
   },
   "devDependencies": {
-    "eslint": "5.16.0"
+    "eslint": "^5.16.0"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
@@ -29,9 +29,9 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jori/curso.git"
+    "url": ""
   },
-  "author": "jori",
+  "author": "",
   "license": "",
   "engines": {
     "node": "^16.14"

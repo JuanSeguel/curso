@@ -13,6 +13,10 @@ module.exports = {
       allowNull: false,
       unique: true,
     },
+    information: {
+      collection: 'information',
+      via: 'owner',
+    },
   },
   datastore: 'default',
 };
