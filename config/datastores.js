@@ -35,8 +35,8 @@ module.exports.datastores = {
     adapter: 'sails-mongo',
     url: 'mongodb://:@localhost:27017/curso',
   },
-  test: {
+  /*test: {
     adapter: 'sails-mysql',
-    url: 'mysql://admin:password@localhost:3306/curso',
-  },
+    url: 'mysql://admin:password@localhost:3306/curso', // siape = desarrollador / desarrollador
+  },*/
 };

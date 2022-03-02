@@ -19,9 +19,9 @@ module.exports.routes = {
    ***************************************************************************/
 
   'GET /': { view: 'pages/homepage' },
-  'GET /list': 'DefaultController.list',
-  'POST /create': 'DefaultController.store',
-  'GET /show/:id': 'DefaultController.show',
+  //'GET /list': 'DefaultController.list',
+  //'POST /create': 'DefaultController.store',
+  //'GET /show/:id': 'DefaultController.show',
 
   // * Rooms
   'get /room/': 'RoomController.list',

@@ -22,7 +22,11 @@ module.exports = {
   },
 
   show: async function (req, res) {
-    let rooms = await Room.find();
+    let data = {
+      id: req.body.id,
+    };
+    let room = await Room.findOne(data);
+    return res.status(200).json(room);
   },
 
   store: async function (req, res) {
@@ -35,7 +39,12 @@ module.exports = {
   },
 
   update: async function (req, res) {
-    let rooms = await Room.find();
+    let data = {
+      id: req.params.id,
+      name: req.body.name,
+    };
+    let room = await Room.findOne({ id: id });
+    return res.status(201).json(room);
   },
 
   destroy: async function (req, res) {
