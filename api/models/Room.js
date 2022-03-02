@@ -13,8 +13,14 @@ module.exports = {
       allowNull: false,
       unique: true,
     },
+    // * relacion uno a uno
     information: {
       collection: 'information',
+      via: 'owner',
+    },
+    // * relacion uno a muchos
+    messages: {
+      collection: 'message',
       via: 'owner',
     },
   },

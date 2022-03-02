@@ -14,9 +14,9 @@ module.exports = {
     let page = Math.abs(req.query.page - 1) || 0;
     let perPage = req.query.perPage || _perPage;
 
-    let rooms = await Room.find({ limit: perPage, skip: page }).populate(
-      'information'
-    );
+    let rooms = await Room.find({ limit: perPage, skip: page })
+      .populate('information')
+      .populate('messages');
     return res.json(rooms);
   },
 

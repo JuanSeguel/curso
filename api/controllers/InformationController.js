@@ -15,7 +15,8 @@ module.exports = {
       topic: req.body.topic,
       owner: id,
     };
-    let information = await Information.create(data);
+    // * si no agrego fetch se crea la info, pero no la devuelve
+    let information = await Information.create(data).fetch();
     return res.status(201).json(information);
   },
 };

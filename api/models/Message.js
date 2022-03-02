@@ -1,5 +1,5 @@
 /**
- * Information.js
+ * Message.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -7,24 +7,13 @@
 
 module.exports = {
   attributes: {
-    description: {
+    text: {
       type: 'string',
-      required: true,
       allowNull: false,
+      required: true,
     },
-    image: {
-      type: 'string',
-      defaultsTo: '',
-    },
-    topic: {
-      type: 'string',
-      defaultsTo: 'random',
-      isIn: ['random', 'magic', 'games', 'code'],
-    },
-    // relacion
     owner: {
       model: 'room',
-      unique: true,
     },
   },
 };
