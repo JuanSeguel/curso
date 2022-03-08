@@ -24,11 +24,17 @@ module.exports.routes = {
   //'GET /show/:id': 'DefaultController.show',
 
   // * Rooms
-  'get /room/': 'RoomController.list',
-  'get /room/:id': 'RoomController.show',
-  'post /room': 'RoomController.store',
-  'put /room/:id': 'RoomController.update',
-  'delete /room/:id': 'RoomController.destroy',
+  'get /rooms/': 'RoomController.list',
+  'get /rooms/:idRoom': 'RoomController.show',
+  'post /rooms': 'RoomController.store',
+  'put /rooms/:idRoom': 'RoomController.update',
+  'delete /rooms/:idRoom': 'RoomController.destroy',
+
+  // * Information
+  'post /rooms/:idRoom/informations': 'InformationController.store',
+
+  // * Mensajes
+  'post /rooms/:idRoom/messages': 'MessageController.store',
 
   // * Ejemplos de ruteo
   /*

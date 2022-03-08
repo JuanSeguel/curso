@@ -8,6 +8,7 @@
 const _perPage = 10;
 
 module.exports = {
+  //* 200 ok / 201 created / 202 accepted / 204 no content
   // * app/api/rooms?page=1?perPage=10
   list: async function (req, res) {
     let page = Math.abs(req.query.page - 1) || 0;
@@ -39,8 +40,8 @@ module.exports = {
   },
 
   update: async function (req, res) {
+    let id = req.params.id;
     let data = {
-      id: req.params.id,
       name: req.body.name,
     };
     let room = await Room.findOne({ id: id });
@@ -48,6 +49,10 @@ module.exports = {
   },
 
   destroy: async function (req, res) {
-    let rooms = await Room.find();
+    let id = req.params.id;
+    let room = await Room.destroyOne({ id: id });
+    return res.json(room);
+    // * archive hace un borrado logico
+    // * destroy borra todos los que coincidan con el criterio
   },
 };

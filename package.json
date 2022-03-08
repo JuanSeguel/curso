@@ -1,24 +1,11 @@
 {
-  "name": "curso",
+  "name": "curso_sails_chat",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "Curso realizado usando Sails.js, bulma, etc",
   "keywords": [],
-  "dependencies": {
-    "@sailshq/connect-redis": "^3.2.1",
-    "@sailshq/lodash": "^3.10.3",
-    "@sailshq/socket.io-redis": "^5.2.0",
-    "@sailshq/upgrade": "^1.0.9",
-    "grunt": "1.0.4",
-    "lodash": "3.10.1",
-    "sails": "^1.5.2",
-    "sails-hook-grunt": "^5.0.0",
-    "sails-hook-orm": "^2.1.1",
-    "sails-hook-sockets": "^1.5.5",
-    "sails-mongo": "^1.2.0"
-  },
   "devDependencies": {
-    "eslint": "5.16.0"
+    "eslint": "^8.10.0"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
@@ -29,11 +16,27 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jori/curso.git"
+    "url": ""
   },
-  "author": "jori",
+  "author": "",
   "license": "",
   "engines": {
     "node": "^16.14"
+  },
+  "dependencies": {
+    "@sailshq/connect-redis": "^3.2.1",
+    "@sailshq/lodash": "^3.10.4",
+    "@sailshq/socket.io-redis": "^5.2.0",
+    "@sailshq/upgrade": "^1.0.9",
+    "axios": "^0.26.0",
+    "grunt": "^1.4.1",
+    "lodash": "^4.17.21",
+    "sails": "^1.5.2",
+    "sails-hook-grunt": "^5.0.0",
+    "sails-hook-orm": "^4.0.1",
+    "sails-hook-sockets": "^2.0.1",
+    "sails-mongo": "^2.0.0",
+    "sails-mysql": "^2.0.0",
+    "vue": "^3.2.31"
   }
 }
