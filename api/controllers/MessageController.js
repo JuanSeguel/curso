@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-  store: function (req, res) {
+  store: async function (req, res) {
     let idRoom = req.params.id;
     let data = {
       text: req.body.text,

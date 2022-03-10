@@ -23,6 +23,11 @@ module.exports = {
       collection: 'message',
       via: 'owner',
     },
+    stickers: {
+      collection: 'sticker',
+      via: 'rooms',
+    },
   },
+
   //datastore: 'default',
 };

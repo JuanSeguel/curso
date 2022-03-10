@@ -36,6 +36,11 @@ module.exports.routes = {
   // * Mensajes
   'post /rooms/:idRoom/messages': 'MessageController.store',
 
+  // * stickers
+  'get /stickers/': 'StickerController.list',
+  'post /stickers': 'StickerController.store',
+  'post /room/:idRoom/stickers/:idSticker': 'StickerController.attach',
+
   // * Ejemplos de ruteo
   /*
   'GET /ejemplo': function(req, res){
