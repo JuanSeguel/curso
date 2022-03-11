@@ -15,4 +15,7 @@ module.exports = {
    * comentario comun
    */
   // * Controlador para las paginas estaticas de la aplicacion
+  index: function (req, res) {
+    res.view('pages/index');
+  },
 };

@@ -17,7 +17,10 @@ module.exports = {
     let rooms = await Room.find({
       limit: perPage,
       skip: page,
-    });
+    })
+      .populate('information') // relacion uno a uno
+      .populate('messages') // relacion uno a muchos
+      .populate('stickers'); // relacion muchos a muchos
 
     return res.json(rooms);
   },

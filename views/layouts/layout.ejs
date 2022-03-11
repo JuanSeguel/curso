@@ -2,32 +2,44 @@
 <html>
   <head>
     <title>Curso</title>
-
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <%/* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
-    <%/* <meta name="robots" content="noindex"> */%>
-
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/bulma.min.css">
     <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/styles.css">
     <!--STYLES END-->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" integrity="sha512-3PN6gfRNZEX4YFyz+sIyTF6pGlQiryJu9NlGhu9LrLMQ7eDjNgudQoFDK3WSNAayeIKc6B8WXXpo4a7HqxjKwg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/js/all.min.js" integrity="sha512-ISfdo0dGmoT6xQiYhsCuBXNy982/TMgk9WnSeFiLoBVffcwXCWMyfYtmobfJuBvSQZVpjPvEJtGEPdTH9XKpvw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   </head>
 
   <body>
-    <div class="container-fluid">
-      <div class="header">
-
+    <div class="columns is-mobile is-centered has-background-primary">
+      <div class="column is-10">
+        <div class="navbar-brand">
+          <p class="is-size-3 has-text-white has-text-weight-bold">
+            Chat
+          </p>
+        </div>
       </div>
+    </div>
+
+    <div class="columns is-mobile is-centered has-background-gray">
+      <div class="column is-10">
+        <%- body %>
+      </div>
+    </div>
+
       <!--TEMPLATES-->
       <!--TEMPLATES END-->
-      <%- body %>
-    </div>
+
+
 
     <!--SCRIPTS-->
     <script src="/dependencies/sails.io.js"></script>
+    <script src="/js/index.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
