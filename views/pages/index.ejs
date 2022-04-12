@@ -2,7 +2,7 @@
   <div class="column is-3-desktop is-12-mobile">
     <div class="card frame-chat">
       <div class="card-content">
-        <h2 class="tag is-success is-size-4 has-text-weight-bold">Salas</h2>
+        <h2 class="tag is-light is-size-4 has-text-weight-bold">Salas</h2>
         <hr />
         <div class="media" v-for="(chat, index) of chats" :key="`chat_${index}`">
           <div class="media-left">
@@ -12,7 +12,7 @@
           </div>
           <div class="media-content">
             <p class="title is-4">{{ chat.name }}</p>
-            <p class="subtitle is-6">{{ chat.creacion }}</p>
+            <p class="subtitle is-6">{{ chat.createdAt }}</p>
           </div>
         </div>
       </div>
@@ -22,14 +22,14 @@
   <div class="column is-9-desktop is-12-mobile">
     <div class="card frame-chat">
       <div class="card-content">
-        <h2 class="tag is-success is-size-4 has-text-weight-bold">Chat</h2>
+        <h2 class="tag is-link is-size-4 has-text-weight-bold">Chat</h2>
 
         <hr />
 
         <div class="frame-box">
           <!-- comentarios-->
           <div v-for="(message, index) in messages" :key="`message-${index}`">
-            <span class="tag is-medium" :class="{'is-pulled-left is-success': (message.idUser == idUser), 'is-pulled-right is-info' :(message.idUser != idUser)}">{{ message.text }}</span>
+            <span class="tag is-medium" :class="{'is-pulled-left is-success': (message.idUser == idUser), 'is-pulled-right is-info' :(message.idUser != idUser)}">{{ message.idUser }}: {{ message.text }}</span>
             <br>
             <br>
           </div>
@@ -37,10 +37,10 @@
 
         <div class="field has-addons ">
           <div class="control is-expanded">
-            <input class="input" v-model="text" type="text" placeholder="Escriba aquí" />
+            <input class="input" v-model="text" type="text" placeholder="Escriba aquí" @keydown.enter="sendMessage"/>
           </div>
           <div class="control">
-            <a class="button is-info"> Enviar </a>
+            <button type="button" class="button is-info" @click="sendMessage"> Enviar </button>
           </div>
         </div>
 
