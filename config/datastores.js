@@ -1,3 +1,5 @@
+require('dotenv').config();
+// console.log(process.env);
 /**
  * Datastores
  * (sails.config.datastores)
@@ -15,7 +17,7 @@
 
 module.exports.datastores = {
   /***************************************************************************
-   *                                                                          *
+   *                                                                         *
    * Your app's default datastore.                                            *
    *                                                                          *
    * Sails apps read and write to local disk by default, using a built-in     *
@@ -32,7 +34,7 @@ module.exports.datastores = {
 
   default: {
     // * Andan los dos adaptadores!!!
-    adapter: 'sails-mongo',
+    adapter: process.env.adapter, //'sails-mongo',
     url: 'mongodb://:@localhost:27017/curso',
   },
   /*test: {

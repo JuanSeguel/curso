@@ -2,9 +2,10 @@
   "name": "curso_sails_chat",
   "private": true,
   "version": "0.0.0",
-  "description": "Curso realizado usando Sails.js, bulma, etc",
+  "description": "Curso realizado usando Sails.js, bulma, Vue2",
   "keywords": [],
   "devDependencies": {
+    "dotenv": "^16.0.0",
     "eslint": "^8.12.0"
   },
   "scripts": {
