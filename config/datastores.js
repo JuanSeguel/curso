@@ -34,8 +34,19 @@ module.exports.datastores = {
 
   default: {
     // * Andan los dos adaptadores!!!
-    adapter: process.env.adapter, //'sails-mongo',
-    url: 'mongodb://:@localhost:27017/curso',
+    adapter: process.env.ADAPTER, //'sails-mongo',
+    url:
+      process.env.DB_TYPE +
+      '://' +
+      process.env.DB_USER +
+      ':' +
+      process.env.DB_PASSWORD +
+      '@' +
+      process.env.DB_HOST +
+      ':' +
+      process.env.DB_PORT +
+      '/' +
+      process.env.DB_NAME,
   },
   /*test: {
     adapter: 'sails-mysql',

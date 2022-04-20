@@ -1,6 +1,10 @@
 const vue = new Vue({
   el: '#app',
+  created() {
+    this.getRooms();
+  },
   data: function () {
+    // datos
     return {
       // modal
       modalActive: true,
@@ -14,18 +18,7 @@ const vue = new Vue({
       // chat
       idUser: 5,
       text: null,
-      chats: [
-        {
-          name: 'Sala juegos',
-          image: 'https://placekitten.com/600/600',
-          createdAt: new Date().toLocaleString(),
-        },
-        {
-          name: 'Sala adultos',
-          image: 'https://placekitten.com/401/400',
-          createdAt: new Date().toLocaleString(),
-        },
-      ],
+      chats: [],
       messages: [
         { text: 'asd', idUser: 1 },
         { text: 'dfg', idUser: 2 },
@@ -36,6 +29,24 @@ const vue = new Vue({
     };
   },
   methods: {
+    getRooms(){
+      axios
+      .get('/rooms')
+      .then((response) => {
+        // console.log(response);
+        this.chats = response.data; //! asi ya funciona
+        //! prueba
+        // this.chats = response.data.map( chat => ({
+        //   idChat: chat.id,
+        //   nameChat: chat.name,
+        //   image: '' || chat.information.pop().image,
+        //   createdAt:chat.createdAt
+        // }));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    },
     sendMessage() {
       if (this.text.trim() != (null || '')) {
         this.messages.push({
@@ -45,11 +56,20 @@ const vue = new Vue({
         this.text = null;
       }
     },
-    createRoom() {
-      alert(this.name);
-    },
+    createRoom () {
+    //crear sala
+      let dataRoom = {
+        name: this.name
+      };
+      axios.post('/room', dataRoom).then((res)=>{
+        console.log(res);
 
-    //metodos
+      }).catch((error)=>{
+        console.log(error);
+      });
+      //crear informacion
+
+    },
   },
 });
 Vue.config.devtools = true;
