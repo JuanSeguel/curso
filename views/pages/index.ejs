@@ -7,12 +7,12 @@
         <div class="media" v-for="(chat, index) of chats" :key="`chat_${index}`">
           <div class="media-left">
             <figure class="image is-48x48">
-              <img class="is-rounded" :src="chat.image" alt="Sala image"/>
+              <img class="is-rounded" :src="chat.information.image" :alt="chat.information.image"/>
             </figure>
           </div>
           <div class="media-content">
             <p class="title is-4">{{ chat.name }}</p>
-            <p class="subtitle is-6">{{ chat.createdAt }}</p>
+            <p class="subtitle is-6">{{ new Date(chat.createdAt).toLocaleString() }}</p>
           </div>
         </div>
       </div>

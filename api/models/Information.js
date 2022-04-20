@@ -14,7 +14,7 @@ module.exports = {
     },
     image: {
       type: 'string',
-      defaultsTo: '',
+      defaultsTo: 'images/chat-room.svg',
     },
     topic: {
       type: 'string',

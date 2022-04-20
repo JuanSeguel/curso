@@ -13,6 +13,11 @@ module.exports = {
       allowNull: false,
       unique: true,
     },
+    /*image: {
+      type: 'string',
+      allowNull: false,
+      defaultsTo: 'images/chat-room.svg',
+    },*/
     // * relacion uno a uno
     information: {
       collection: 'information',
