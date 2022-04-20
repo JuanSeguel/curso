@@ -8,19 +8,7 @@ const vue = new Vue({
     return {
       idUser: 1,
       text: null,
-      chats: null,
-      /*[
-        {
-          name: 'Sala juegos',
-          image: 'https://placekitten.com/600/600',
-          createdAt: new Date().toLocaleString(),
-        },
-        {
-          name: 'Sala adultos',
-          image: 'https://placekitten.com/401/400',
-          createdAt: new Date().toLocaleString(),
-        },
-      ],*/
+      chats: [],
       messages: [
         { text: 'asd', idUser: 1 },
         { text: 'dfg', idUser: 2 },
@@ -58,6 +46,20 @@ const vue = new Vue({
         });
         this.text = null;
       }
+    },
+    createRoom () {
+    //crear sala
+      let dataRoom = {
+        name: this.name
+      };
+      axios.post('/room', dataRoom).then((res)=>{
+        console.log(res);
+
+      }).catch((error)=>{
+        console.log(error);
+      });
+      //crear informacion
+
     },
   },
 });
