@@ -11,11 +11,12 @@ module.exports = {
    * * bien!
    * ? pregunta
    * TODO: hacer
-   * @param parametro
+   * @loquesea descripcion
    * comentario comun
    */
   // * Controlador para las paginas estaticas de la aplicacion
   index: function (req, res) {
+    // sails.log.debug(req);
     res.view('pages/index');
   },
 };

@@ -3,7 +3,9 @@
     <div class="card frame-chat">
       <div class="card-content">
         <h2 class="tag is-light is-size-4 has-text-weight-bold">Salas</h2>
-        <hr />
+        <hr>
+        <button class="button is-info is-medium" @click="modalActive = true">Crear sala</button>
+        <hr>
         <div class="media" v-for="(chat, index) of chats" :key="`chat_${index}`">
           <div class="media-left">
             <figure class="image is-48x48">
@@ -47,6 +49,63 @@
       </div>
     </div>
   </div>
+
+  <!-- MODAL -->
+  <div class="modal" :class="{ 'is-active': modalActive }">
+    <div class="modal-background" @click="modalActive = false"></div>
+    <div class="modal-content">
+      <div class="card">
+        <div class="card-content">
+          <form @submit.prevent="createRoom">
+            <div class="field">
+              <label for="" class="label">Nombre de la sala</label>
+                <div class="control">
+                  <input type="text" class="input" v-model="name">
+                </div>
+            </div>
+
+            <div class="field">
+              <label for="" class="label">Descripción</label>
+                <div class="control">
+                  <input type="text" class="input" v-model="description">
+                </div>
+            </div>
+
+            <div class="field">
+              <label for="" class="label">Imagen de la sala</label>
+                <div class="control">
+                  <input type="text" class="input" v-model="image">
+                </div>
+            </div>
+
+            <div class="field">
+              <label for="" class="label">Tema</label>
+                <div class="control">
+                  <div class="select ">
+                    <select v-model="topic">
+                      <option value="random">Random</option>
+                      <option value="magic">Magia</option>
+                      <option value="games">Juegos</option>
+                      <option value="code">Código</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button class="button is-info">Crear sala</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <button class="modal-close is-large" aria-label="close" @click="modalActive = false"></button>
+  </div>
+
   <pre>
     {{ $data }}
   </pre>

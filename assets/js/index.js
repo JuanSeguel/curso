@@ -1,9 +1,18 @@
 const vue = new Vue({
   el: '#app',
   data: function () {
-    // datos
     return {
-      idUser: 1,
+      // modal
+      modalActive: true,
+      // room
+      name: null,
+      description: null,
+      image: null,
+      topic: null,
+      idRoom: null,
+
+      // chat
+      idUser: 5,
       text: null,
       chats: [
         {
@@ -28,12 +37,19 @@ const vue = new Vue({
   },
   methods: {
     sendMessage() {
-      this.messages.push({
-        text: this.text,
-        idUser: this.idUser,
-      });
-      this.text = null;
+      if (this.text.trim() != (null || '')) {
+        this.messages.push({
+          text: this.text,
+          idUser: this.idUser,
+        });
+        this.text = null;
+      }
     },
+    createRoom() {
+      alert(this.name);
+    },
+
+    //metodos
   },
 });
 Vue.config.devtools = true;
