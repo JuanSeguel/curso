@@ -10,7 +10,17 @@ const vue = new Vue({
   data: function () {
     // datos
     return {
-      idUser: 1,
+      // modal
+      modalActive: true,
+      // room
+      name: null,
+      description: null,
+      image: null,
+      topic: null,
+      idRoom: null,
+
+      // chat
+      idUser: 5,
       text: null,
       chats: [],
       messages: [
@@ -42,10 +52,9 @@ const vue = new Vue({
       });
     },
     sendMessage() {
-      let texto = this.text.trim();
-      if (texto !== null && texto !== '') {
+      if (this.text.trim() != (null || '')) {
         this.messages.push({
-          text: texto,
+          text: this.text,
           idUser: this.idUser,
         });
         this.text = null;
