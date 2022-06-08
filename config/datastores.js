@@ -1,5 +1,5 @@
 require('dotenv').config();
-// console.log(process.env);
+//console.log(process.env);
 /**
  * Datastores
  * (sails.config.datastores)
@@ -35,19 +35,7 @@ module.exports.datastores = {
   default: {
     // * Andan los dos adaptadores!!!
     adapter: process.env.ADAPTER, //'sails-mongo',
-    url:
-      process.env.DB_TYPE +
-      '://' +
-      process.env.DB_USER +
-      ':' +
-      process.env.DB_PASSWORD +
-      '@' +
-      process.env.DB_HOST +
-      ':' +
-      process.env.DB_PORT +
-      '/' +
-      process.env.DB_NAME,
-  },
+    url:process.env.DB_TYPE+'://'+process.env.DB_USER+':'+process.env.DB_PASSWORD+'@'+process.env.DB_HOST+':'+process.env.DB_PORT+'/'+process.env.DB_NAME},
   /*test: {
     adapter: 'sails-mysql',
     url: 'mysql://admin:password@localhost:3306/curso', // siape = desarrollador / desarrollador

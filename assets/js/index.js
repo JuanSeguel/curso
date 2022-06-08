@@ -1,3 +1,7 @@
+//const _axios = require('axios');
+// import Vue from 'vue';
+// import axios from 'axios';
+// Vue.use(axios);
 const vue = new Vue({
   el: '#app',
   created() {
