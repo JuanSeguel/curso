@@ -16,8 +16,8 @@ module.exports = {
    */
   // * Controlador para las paginas estaticas de la aplicacion
   index: function (req, res) {
-    let modelos = sails.models;
-    console.log(modelos);
+    //let modelos = sails.models;
+    //console.log(modelos);
     // sails.log.debug(req);
     res.view('pages/index');
   },
