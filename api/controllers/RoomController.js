@@ -37,6 +37,7 @@ module.exports = {
     let data = {
       name: req.body.name,
     };
+    console.log(data);
 
     let room = await Room.create(data).fetch();
     return res.status(201).json(room);

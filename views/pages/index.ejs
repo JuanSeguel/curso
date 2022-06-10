@@ -6,15 +6,15 @@
         <hr>
         <button class="button is-info is-medium" @click="modalActive = true">Crear sala</button>
         <hr>
-        <div class="media" v-for="(chat, index) of chats" :key="`chat_${index}`">
+        <div class="media" v-for="(room, index) of rooms" :key="`room_${index}`">
           <div class="media-left">
             <figure class="image is-48x48">
-              <img class="is-rounded" :src="chat.information.image" :alt="chat.information.image"/>
+              <img class="is-rounded" :src="room.information.image || '/images/chat-room-default.svg'" :alt="room.information.image"/>
             </figure>
           </div>
           <div class="media-content">
-            <p class="title is-4">{{ chat.name }}</p>
-            <p class="subtitle is-6">{{ new Date(chat.createdAt).toLocaleString() }}</p>
+            <p class="title is-4">{{ room.name }}</p>
+            <p class="subtitle is-6">{{ new Date(room.createdAt).toLocaleString() }}</p>
           </div>
         </div>
       </div>
@@ -80,8 +80,8 @@
 
             <div class="field">
               <label for="" class="label">Tema</label>
-                <div class="control">
-                  <div class="select ">
+                <div class="control ">
+                  <div class="select is-full">
                     <select v-model="topic">
                       <option value="random">Random</option>
                       <option value="magic">Magia</option>
@@ -94,7 +94,7 @@
 
             <div class="field">
               <div class="control">
-                <button class="button is-info">Crear sala</button>
+                <button class="button is-info" disabled="{ disableBtn }">Crear sala</button>
               </div>
             </div>
 

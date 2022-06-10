@@ -11,7 +11,8 @@ const vue = new Vue({
     // datos
     return {
       // modal
-      modalActive: true,
+      modalActive: false,
+      disableBtn: this.checkName(),
       // room
       name: null,
       description: null,
@@ -22,7 +23,7 @@ const vue = new Vue({
       // chat
       idUser: 5,
       text: null,
-      chats: [],
+      rooms: [],
       messages: [
         { text: 'asd', idUser: 1 },
         { text: 'dfg', idUser: 2 },
@@ -38,7 +39,7 @@ const vue = new Vue({
       .get('/rooms')
       .then((response) => {
         // console.log(response);
-        this.chats = response.data; //! asi ya funciona
+        this.rooms = response.data; //! asi ya funciona
         //! prueba
         // this.chats = response.data.map( chat => ({
         //   idChat: chat.id,
@@ -60,19 +61,23 @@ const vue = new Vue({
         this.text = null;
       }
     },
+    checkName(){
+      return this.name === undefined || this.name.trim().length > 0;
+    },
     createRoom () {
     //crear sala
       let dataRoom = {
-        name: this.name
+        name: this.name.trim(),
+        description: this.description.trim()
       };
-      axios.post('/room', dataRoom).then((res)=>{
-        console.log(res);
-
+      axios.post('/rooms', dataRoom).then(()=>{
+        this.getRooms();
+        this.modalActive=false;
+        this.name = null;
+        this.description = null;
       }).catch((error)=>{
         console.log(error);
       });
-      //crear informacion
-
     },
   },
 });
