@@ -33,6 +33,11 @@ const vue = new Vue({
       ],
     };
   },
+  computed: { // las funciones son reactivas y no reciben parametros
+    checkName(){
+      return this.name === undefined || this.name.trim().length > 0;
+    },
+  },
   methods: {
     getRooms(){
       axios
@@ -60,9 +65,6 @@ const vue = new Vue({
         });
         this.text = null;
       }
-    },
-    checkName(){
-      return this.name === undefined || this.name.trim().length > 0;
     },
     createRoom () {
     //crear sala
